@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import glob
 import sys
@@ -33,7 +34,7 @@ def onlyDirectories(path, logfile=None):
             print(f"{'********':<10} {'*******************':<25}")
 
         for item in os.listdir(path):
-            if os.path.isdir(item):
+            if os.path.isdir(os.path.join(path, item)):
                 if logfile:
                     output.append(item)         # append to ooutput list for logfile
                 else:
